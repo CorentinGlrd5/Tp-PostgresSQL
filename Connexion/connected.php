@@ -19,9 +19,8 @@
     try{
      // create a PostgreSQL database connection
     $conn = new PDO($dsn);
-    echo"connected";
-    $_SESSION['con'] = $conn;
-    
+    $_SESSION['cledsn'] = $dsn;
+    header('Location: /Tp-PostgresSQL/interface/creaSchemat.php');
     }catch (PDOException $e){
      // report error message
     echo "Fail";
