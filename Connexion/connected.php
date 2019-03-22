@@ -20,6 +20,7 @@
      // create a PostgreSQL database connection
     $conn = new PDO($dsn);
     echo"connected";
+    $_SESSION['con'] = $conn;
     
     }catch (PDOException $e){
      // report error message
