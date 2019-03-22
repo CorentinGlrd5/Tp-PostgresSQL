@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <title>CodePen - Random Login Form</title>
+  <title>Codmoa</title>
     <script src="js/prefixfree.min.js"></script>
 
 </head>
