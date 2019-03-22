@@ -1,0 +1,19 @@
+{
+  "name": "tp-postgressql",
+  "version": "1.0.0",
+  "description": "Une interface de connexion PDO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CorentinGlrd5/Tp-PostgresSQL.git"
+  },
+  "author": "Corentin Léo François",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CorentinGlrd5/Tp-PostgresSQL/issues"
+  },
+  "homepage": "https://github.com/CorentinGlrd5/Tp-PostgresSQL#readme"
+}
