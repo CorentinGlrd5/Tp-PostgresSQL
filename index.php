@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<form method="post" action="setconf.php"> 
+	<form method="post" action="Connexion/setconf.php"> 
 		<input type="text" placeholder="username" name="nom"><br> 
 		<input type="password" placeholder="password" name="password"> 
 		<input type="submit" value="Login"> 	

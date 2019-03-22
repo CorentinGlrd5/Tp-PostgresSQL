@@ -4,4 +4,4 @@ session_start();
 $_SESSION['nom'] = $_POST['nom'];   
 $_SESSION['password']   = $_POST['password'];
 
-header('Location: /Tp-PostgresSQL/connected.php');
+header('Location: /Tp-PostgresSQL/Connexion/connected.php');
