@@ -6,16 +6,16 @@
     $dsn = "pgsql:host=$host;port=5432;dbname=$db;user=$username;password=$password";
      
     try{
-     // create a PostgreSQL database connection
-    $conn = new PDO($dsn);
-    $_SESSION['cledsn'] = $dsn;
-    $message="Welcome $username !";
-    echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
-    
-    }catch (PDOException $e){
-     // report error message
-    echo "Database is not available :(";
-    }
+        // create a PostgreSQL database connection
+       $conn = new PDO($dsn);
+       $_SESSION['cledsn'] = $dsn;
+       $message="Welcome $username !";
+       echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
+       
+       }catch (PDOException $e){
+        // report error message
+       echo "Database is not available :(";
+       }
         
 ?>
 
@@ -31,7 +31,7 @@
 </head>
 <body>
 
-
+    <a href="../interface/creaSchema.php">go to </a>
     
 </body>
 </html>
