@@ -8,11 +8,18 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
-    <h1>Création d'un nouveau schémat</h1>
+    <h1>Création d'un nouveau schéma</h1>
 
     <?php
     session_start();
     $conn = new PDO($_SESSION['cledsn']);
+    $pdoStat = $conn->prepare('SELECT distinct schema_name FROM information_schema.schemata');
+
+    $executeIsOK = $pdoStat->execute();
+    $select = $pdoStat->fetchAll();
+    foreach ($select as $value) {
+        var_dump($value[0]);
+    }
     
     ?>
 </body>
