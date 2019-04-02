@@ -24,8 +24,8 @@
        echo "Database is not available :(";
        }
 
-    if (isset($_POST["namesch"])&& is_null($_POST["namesch"])) {
-        
+    if (isset($_POST["namesch"])&& $_POST["namesch"]!=" ") {
+        var_dump($_POST["namesch"]);
         $pdoStat = $conn->prepare('SELECT distinct schema_name FROM information_schema.schemata');
         $executeIsOK = $pdoStat->execute();
         $selectsche = $pdoStat->fetchAll();
@@ -49,8 +49,8 @@
                echo "exception";
             }
         }
-   
-    }else {
+    }
+    else {
         $pdoStat = $conn->prepare('SELECT distinct schema_name FROM information_schema.schemata');
         $executeIsOK = $pdoStat->execute();
         $selectsche = $pdoStat->fetchAll();
