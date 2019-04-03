@@ -31,7 +31,8 @@
 </head>
 <body>
 
-    <a href="../interface/creaSchema.php">go to </a>
+    <a href="../interface/creaSchema.php">go to schema</a>
+    <a href="../interface/configTable.php">go to table</a>
     
 </body>
 </html>
