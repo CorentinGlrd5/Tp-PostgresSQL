@@ -65,14 +65,14 @@
           <form
             class="login100-form validate-form"
             method="post"
-            action="Connexion/setconf.php"
+            action="Connexion/addNewUser.php"
           >
             <span class="login100-form-logo">
               <i class="zmdi zmdi-landscape"></i>
             </span>
 
             <span class="login100-form-title p-b-34 p-t-27">
-              Log in
+              Register
             </span>
 
             <div
@@ -103,13 +103,13 @@
 
             <div class="container-login100-form-btn">
               <button class="login100-form-btn">
-                Login
+                Register
               </button>
             </div>
 
             <div class="text-center p-t-90">
-              <a class="txt1" href="/Tp-PostgresSQL/register.php">
-                No account ? Register
+              <a class="txt1" href="/Tp-PostgresSQL/index.php">
+                You have a account ? Login
               </a>
             </div>
           </form>

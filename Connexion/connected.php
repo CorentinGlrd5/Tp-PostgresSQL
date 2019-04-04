@@ -14,7 +14,7 @@
        
        }catch (PDOException $e){
         // report error message
-       echo "Database is not available :(";
+        header('Location: /Tp-PostgresSQL/Errors/connection.html');
        }
         
 ?>
@@ -26,13 +26,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Codmoa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/connection.css" />
 </head>
 <body>
-
-    <a href="../interface/creaSchema.php">go to schema</a>
-    <a href="../interface/configTable.php">go to table</a>
-    
+    <h1>Que voulez-vous faire ?</h1>
+    <div class="container">
+        <a href="../interface/creaSchema.php">go to schema</a>
+        <a href="../interface/configTable.php">go to table</a>
+    </div>
 </body>
 </html>
