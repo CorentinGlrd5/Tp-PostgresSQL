@@ -1,0 +1,50 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    
+}
+.middl{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.start{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+
+input {
+    text-decoration: none;
+    color: black;
+    padding: 14px 25px;
+    border: solid 1px black;
+    background-color: white;
+    border-radius: 15px;
+    margin: 12px 5px;
+    transition: 0.3s;
+    width: 200px;
+}
+
+input:hover {
+    color: black;
+    border: solid 1px cornflowerblue;
+    border-radius: 0px;
+}
+input:focus {
+    color: black;
+    border: solid 1px cornflowerblue;
+    border-radius: 0px;
+}
+
+.incheckbox{
+    border: solid 1px black;
+    background-color: white;
+    border-radius: 15px;
+    transition: 0.3s;
+    width: 50px;
+}
+
+
+
+
