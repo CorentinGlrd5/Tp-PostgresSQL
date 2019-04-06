@@ -9,9 +9,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/creatTable.css" />
 </head>
 <body>
-    <h1>Création d'un nouveau schéma</h1>
+    
     <div class="middl">
         <div class="start">
+        <h1>Création d'un nouveau schéma</h1>
             <form action="" method="post">
                 <input type="text" name="namesch" placeholder="Nom du schéma">
                 <input type="submit" value="crée un schéma"/>
