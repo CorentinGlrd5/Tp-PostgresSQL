@@ -116,7 +116,7 @@
             </div>
 
             <div class="container-login100-form-btn">
-              <input class="login100-form-btn" type="submit" name="register" value="Register"/>
+              <input class="login100-form-btn btn-register" type="submit" name="register" value="Register"/>
             </div>
 
             <div class="text-center p-t-90">
