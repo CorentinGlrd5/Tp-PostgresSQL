@@ -4,54 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="../images/icons/favicon.ico" />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="vendor/bootstrap/css/bootstrap.min.css"
+      href="../vendor/bootstrap/css/bootstrap.min.css"
     />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+      href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css"
     />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="fonts/iconic/css/material-design-iconic-font.min.css"
+      href="../fonts/iconic/css/material-design-iconic-font.min.css"
     />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css" />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="vendor/css-hamburgers/hamburgers.min.css"
-    />
-    <!--===============================================================================================-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="vendor/animsition/css/animsition.min.css"
+      href="../vendor/css-hamburgers/hamburgers.min.css"
     />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="vendor/select2/select2.min.css"
+      href="../vendor/animsition/css/animsition.min.css"
     />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
       type="text/css"
-      href="vendor/daterangepicker/daterangepicker.css"
+      href="../vendor/select2/select2.min.css"
     />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../vendor/daterangepicker/daterangepicker.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../css/util.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <!--===============================================================================================-->
   </head>
 
@@ -59,13 +59,13 @@
 <div class="limiter">
       <div
         class="container-login100"
-        style="background-image: url('images/bg-01.jpg');"
+        style="background-image: url('../images/bg-01.jpg');"
       >
         <div class="wrap-login100">
           <form
             class="login100-form validate-form"
             method="post"
-            action="Connexion/addNewUser.php"
+            action="register.php"
           >
             <span class="login100-form-logo">
               <i class="zmdi zmdi-landscape"></i>
@@ -82,7 +82,7 @@
               <input
                 class="input100"
                 type="text"
-                name="nom"
+                name="userName"
                 placeholder="Username"
               />
               <span class="focus-input100" data-placeholder="&#xf207;"></span>
@@ -95,16 +95,27 @@
               <input
                 class="input100"
                 type="password"
-                name="password"
+                name="userPassword"
                 placeholder="Password"
               />
               <span class="focus-input100" data-placeholder="&#xf191;"></span>
             </div>
 
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Enter password"
+            >
+              <input
+                class="input100"
+                type="password"
+                name="userVerifPassword"
+                placeholder="Confirme Password"
+              />
+              <span class="focus-input100" data-placeholder="&#xf191;"></span>
+            </div>
+
             <div class="container-login100-form-btn">
-              <button class="login100-form-btn">
-                Register
-              </button>
+              <input class="login100-form-btn" type="submit" name="register" value="Register"/>
             </div>
 
             <div class="text-center p-t-90">
@@ -121,20 +132,56 @@
 <div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/animsition/js/animsition.min.js"></script>
+<script src="../vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendor/bootstrap/js/popper.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
+<script src="../vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/daterangepicker/moment.min.js"></script>
-<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<script src="../vendor/daterangepicker/moment.min.js"></script>
+<script src="../vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
-<script src="vendor/countdowntime/countdowntime.js"></script>
+<script src="../vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
+
+<?php
+
+
+  try {
+    require 'userAdmin.php';
+
+    $connexionDB = new PDO('pgsql:host=localhost;port=5432;dbname=test',$userAdmin,$passwordAdmin);
+    $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  }
+  catch(Exception $e) {
+    header('Location: /Tp-PostgresSQL/Errors/connection.html');
+  };
+
+  if (isset($_POST['register'])) {
+    if ($_POST['userPassword'] == $_POST['userVerifPassword']) {
+      $userName = $_POST['userName'];
+      $userPassword = $_POST['userPassword'];
+      $insertNewUser = $connexionDB->prepare("CREATE USER $userName WITH PASSWORD '$userPassword';");
+      try {
+        $executeIsOK = $insertNewUser->execute();
+        $selectsche = $insertNewUser->fetchAll();
+        $messageIfUserNotExist="$userName a été créé avec succes !";
+        echo '<script type="text/javascript">window.alert("'.$messageIfUserNotExist.'");</script>';
+      } catch (Exception $error) {
+        $messageIfUserExist="Ce user est déjà créer. Veuillez en créer un autre !";
+        echo '<script type="text/javascript">window.alert("'.$messageIfUserExist.'");</script>';
+      }
+    } else {
+      $messageIncorrectPassword="Le mot de passe est incorect !";
+      echo '<script type="text/javascript">window.alert("'.$messageIncorrectPassword.'");</script>';
+    }
+} else {
+};
+
+?>

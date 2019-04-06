@@ -108,7 +108,7 @@
             </div>
 
             <div class="text-center p-t-90">
-              <a class="txt1" href="/Tp-PostgresSQL/register.php">
+              <a class="txt1" href="/Tp-PostgresSQL/interface/register.php">
                 No account ? Register
               </a>
             </div>
