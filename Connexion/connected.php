@@ -35,6 +35,7 @@
         <div class="container">
             <a href="../interface/creaSchema.php">CREATE Schema</a>
             <a href="../interface/configTable.php">CREATE Table</a>
+            <a href="../interface/creaRoles.php">Gestion des roles utilisateurs</a>
             <a href="../interface/chargeFich.php">Charger un fichier</a>
             
         </div>
