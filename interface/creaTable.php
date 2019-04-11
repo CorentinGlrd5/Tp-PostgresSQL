@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/creatTable.css" />
 </head>
 <body>
-    
+    <a href="../index.php">Déconnexion !</a>
     <div class="middl">
         <div class="start">
         <h2>Choissisez le schema ou vous voulez créer la table :</h2>
