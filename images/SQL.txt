@@ -1,0 +1,4 @@
+CREATE SCHEMA falasas;
+CREATE TABLE falasas.bvn(
+	id int
+	);
