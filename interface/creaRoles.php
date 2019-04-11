@@ -8,14 +8,63 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/creatTable.css" />
 </head>
 <body>
-    <h1>Création d'un nouveau schéma</h1>
-    <div class="middl">
+<div class="middl">
         <div class="start">
+            <h1>Choissisez l'utilisateur auquel vous voulez définire ses roles.</h1>
+
+            <h2>Liste des utilisateurs :</h2>
             <form action="" method="post">
-                <input type="text" name="namesch">
-                <input type="submit" value="crée un schema"/>
+            <ul>
+
+                <?php
+                session_start();
+                try{
+                    $conn = new PDO($_SESSION['cledsn']);
+                }catch (PDOException $e){
+                    // report error message
+                echo "Database is not available :(";
+                };
+
+                $pdoStat = $conn->prepare("SELECT u.usename AS UserName FROM pg_catalog.pg_user u;");
+                $executeIsOK = $pdoStat->execute();
+                $selectsche = $pdoStat->fetchAll();
+
+                foreach ($selectsche as $value) {           
+                    echo'<li>'.$value["username"].'</li>';
+                }
+
+                ?>
+            </ul>
+
+                <input type="text" name="userName" placeholder="Nom de l'utilisateur">
+
+            <ul>
+                <input type="checkbox" name="Select" value="Bike"> Sélectioner<br>
+                <input type="checkbox" name="Insert" value="Car"> Insérer<br>
+                <input type="checkbox" name="Update" value="Bike"> Modifier<br>
+                <input type="checkbox" name="Delete" value="Bike"> Supprimer<br>
+            </ul>
+
+                <input type="submit" name="changeRoles" value="Modifier ses Roles"/>
+
             </form>
-            <h2>Liste des utilisateurs avec leurs roles</h2>
+            <?php
+
+
+            if (isset($_POST['changeRoles'])) {
+                $user = $_POST['userName'];
+                $select = $_POST['Select'];
+                $insert = $_POST['Insert'];
+                $update = $_POST['Update'];
+                $delete = $_POST['Delete'];
+                // $pdoStat = $conn->prepare("SELECT u.usename AS UserName FROM pg_catalog.pg_user u;");
+                // $executeIsOK = $pdoStat->execute();
+                // $selectsche = $pdoStat->fetchAll();
+                echo($user + $select + $insert + $update + $delete);
+
+
+            };
+            ?>
         </div>
     </div>
 </body>
