@@ -25,7 +25,6 @@
                     // report error message
                 echo "Database is not available :(";
                 }
-<<<<<<< HEAD
                 if (isset($_FILES['FichPLAT']['size']) && $_FILES['FichPLAT']['size']>0) {
                     echo '<h3>Requètes executée :</h3>';
                     rename($_FILES['FichPLAT']['tmp_name'],'../images/'.$_FILES['FichPLAT']['name']);
@@ -40,24 +39,6 @@
                         echo $value.'<br>';
                     };
                     echo '<script type="text/javascript">window.alert("Nous avons executer vos requete dans votre fichier");</script>';
-=======
-                if (isset($_POST['importer'])) {
-                    if ($_FILES['FichPLAT']['size']>0) {
-                        echo '<h3>Requètes executée :</h3>';
-                        rename($_FILES['FichPLAT']['tmp_name'],'../fichiersPlats/'.$_FILES['FichPLAT']['name']);
-                        $file = '../fichiersPlats/'.$_FILES['FichPLAT']['name'];
-                        $handle = fopen($file,'r');
-                        $content = fread($handle,filesize($file));
-                        fclose($handle);
-                        $tabString = explode(';',$content);
-                        foreach ($tabString as $value) {
-                            $pdoStat = $conn->prepare($value);
-                            $executeIsOK = $pdoStat->execute();
-                            echo $value.'<br>';
-                        };
-                        echo '<script type="text/javascript">window.alert("Nous avons executer vos requete dans votre fichier");</script>';
-                    }
->>>>>>> 415f33590775ed37ef69b35d30f90a3b26b320c2
                 };
             ?>
         </div>   
