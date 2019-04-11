@@ -1,16 +1,31 @@
 body {
-  text-align: center;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 h1 {
   margin-top: 150px;
 }
-
+.middle{
+  text-align: center;
+}
 .container {
   display: flex;
   justify-content: space-evenly;
   margin-top: 100px;
+}
+.deco {
+  text-decoration: none;
+  color: white;
+  padding: 0px 10px;
+  background-color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+  border-radius: 15px;
+}
+
+.deco:hover {
+  color: black;
+  border: solid 1px black;
+  background-color: white;
 }
 
 a {

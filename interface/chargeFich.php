@@ -9,6 +9,7 @@
     <script src="main.js"></script>
 </head>
 <body>
+        <a href="../index.php">Déconnexion !</a>
         <div class="start">
             <h2>Charger votre fichier .txt avec vos requètes SQL dedans !</h2>
             <form method="post" action="" enctype="multipart/form-data">
@@ -24,7 +25,7 @@
                     // report error message
                 echo "Database is not available :(";
                 }
-                if ($_FILES['FichPLAT']['size']>0) {
+                if (isset($_FILES['FichPLAT']['size']) && $_FILES['FichPLAT']['size']>0) {
                     echo '<h3>Requètes executée :</h3>';
                     rename($_FILES['FichPLAT']['tmp_name'],'../images/'.$_FILES['FichPLAT']['name']);
                     $file = '../images/'.$_FILES['FichPLAT']['name'];

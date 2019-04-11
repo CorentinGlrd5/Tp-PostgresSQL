@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/creatTable.css" />
 </head>
 <body>
-    
+    <a href="../index.php">Déconnexion !</a>
     <div class="middl">
         <div class="start">
         <h1>Création d'un nouveau schéma</h1>

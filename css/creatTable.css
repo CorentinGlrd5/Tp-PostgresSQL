@@ -42,3 +42,18 @@ input:focus {
   transition: 0.3s;
   width: 50px;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+  padding: 0px 10px;
+  background-color: cornflowerblue;
+  border: solid 1px cornflowerblue;
+  border-radius: 15px;
+}
+
+a:hover {
+  color: black;
+  border: solid 1px black;
+  background-color: white;
+}

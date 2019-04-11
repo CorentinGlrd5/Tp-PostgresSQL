@@ -29,12 +29,15 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/connection.css" />
 </head>
 <body>
-    <h1>Que voulez-vous faire ?</h1>
-    <div class="container">
-        <a href="../interface/creaSchema.php">CREATE Schema</a>
-        <a href="../interface/configTable.php">CREATE Table</a>
-        <a href="../interface/chargeFich.php">Charger un fichier</a>
-        
+    <a href="../index.php" class="deco">Déconnexion !</a>
+    <div class="middle">
+        <h1>Que voulez-vous faire ?</h1>
+        <div class="container">
+            <a href="../interface/creaSchema.php">CREATE Schema</a>
+            <a href="../interface/configTable.php">CREATE Table</a>
+            <a href="../interface/chargeFich.php">Charger un fichier</a>
+            
+        </div>
     </div>
 </body>
 </html>
