@@ -36,8 +36,12 @@
 
                 ?>
             </ul>
+                
+                <p>Veuillez rentrer le nom de l'utilisateur dans le champs ci-dessous :</p>
 
                 <input type="text" name="userName" placeholder="Nom de l'utilisateur" required>
+
+                <h2>Liste des rôles :</h2>
 
             <ul>
                 <input type="checkbox" name="select" value="SELECT"> Sélectioner<br>
