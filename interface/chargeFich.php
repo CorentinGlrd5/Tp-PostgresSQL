@@ -23,7 +23,7 @@
                     $conn = new PDO($_SESSION['cledsn']);
                 }catch (PDOException $e){
                     // report error message
-                echo "Database is not available :(";
+                    header('Location: /Tp-PostgresSQL/Errors/connection.html');
                 }
                 if (isset($_FILES['FichPLAT']['size']) && $_FILES['FichPLAT']['size']>0) {
                     echo '<h3>Requètes executée :</h3>';

@@ -24,7 +24,7 @@
                 $conn = new PDO($_SESSION['cledsn']);
             }catch (PDOException $e){
                 // report error message
-            echo "Database is not available :(";
+                header('Location: /Tp-PostgresSQL/Errors/connection.html');
             }
 
             if (isset($_POST["namesch"])&& $_POST["namesch"]!=" ") {

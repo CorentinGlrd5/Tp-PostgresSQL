@@ -153,7 +153,7 @@
 
 <?php
 
-
+  // ici, on verifie si l'utilisateur est bien connecter à la base de donnée. Car je suis obligé de me connecter a la base de donnée avant pour pouvoir créer un utilisateur.
   try {
     require 'userAdmin.php';
 
@@ -164,6 +164,7 @@
     header('Location: /Tp-PostgresSQL/Errors/connection.html');
   };
 
+  // ici je verifie si le mot de passe est bien le meme pour valider le formulaire de création d'utilisateur. Ensuite, je prépara ma requette sql pour enregistrer mon nouvelle utilisateur en récupérant l'identifiant et le mot de passe. Enfin, je vérifie si il n'existe pas déja cette utilisateur dans la base de donnée avant d'éxecuter la requette.
   if (isset($_POST['register'])) {
     if ($_POST['userPassword'] == $_POST['userVerifPassword']) {
       $userName = $_POST['userName'];

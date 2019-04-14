@@ -18,7 +18,7 @@
                 $conn = new PDO($_SESSION['cledsn']);
             }catch (PDOException $e){
                 // report error message
-            echo "Database is not available :(";
+                header('Location: /Tp-PostgresSQL/Errors/connection.html');
             }
             echo '<form action="creaTable.php" method="post">';
             $pdoStat = $conn->prepare('SELECT distinct schema_name FROM information_schema.schemata');
